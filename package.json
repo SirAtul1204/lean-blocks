@@ -1,6 +1,6 @@
 {
   "name": "@siratul1204/lean-blocks",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "style": "lib/styles/globals.css",
   "main": "dist/lean-blocks.js",
