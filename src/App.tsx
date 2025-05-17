@@ -1,4 +1,5 @@
 import { Button, Loading } from ".";
+import "./App.css";
 
 function App() {
   return (

@@ -6,7 +6,8 @@
   "main": "dist/lean-blocks.js",
   "types": "dist/main.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "lib/styles/global.css"
   ],
   "sideEffects": [
     "**/*.css"
