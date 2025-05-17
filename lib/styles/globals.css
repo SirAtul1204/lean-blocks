@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: oklch(55% 0.14 210); /* Deep Teal */
+  --color-secondary: oklch(82% 0.2 85); /* Vibrant Amber */
+  --color-surface: oklch(98% 0.02 100); /* Soft Cream */
+  --color-border: oklch(88% 0 0); /* Light Gray */
+
+  --color-primary-text: oklch(20% 0 0); /* Charcoal */
+  --color-secondary-text: oklch(45% 0 0); /* Medium Gray */
+  --color-btn-primary-text: oklch(100% 0 0); /* White */
+  --color-btn-secondary-text: oklch(20% 0 0); /* Charcoal */
+
+  --color-background: oklch(97% 0.01 95); /* Very Light Gray */
+
+  --color-success: oklch(66% 0.25 145); /* Fresh Green */
+  --color-warning: oklch(75% 0.25 75); /* Orange Alert */
+  --color-error: oklch(55% 0.27 30); /* Vivid Red */
+
+  --color-btn-disabled-bg: oklch(80% 0 0); /* Muted Gray */
+  --color-btn-disabled-text: oklch(65% 0 0); /* Light Gray Text */
+
+  /* Light Mode Shadows using oklch */
+  --shadow-xs: 0 1px 2px oklch(95% 0 0 / 0.05);
+  --shadow-sm: 0 1px 3px oklch(95% 0 0 / 0.1);
+  --shadow-md: 0 4px 6px oklch(95% 0 0 / 0.1), 0 2px 4px oklch(95% 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px oklch(95% 0 0 / 0.15), 0 4px 6px oklch(95% 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px oklch(95% 0 0 / 0.2),
+    0 10px 10px oklch(95% 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px oklch(95% 0 0 / 0.25);
+  --shadow-inner: inset 0 2px 4px oklch(95% 0 0 / 0.06);
+  --shadow-none: none;
+
+  --animate-bounce-1: bounce 1s ease-in-out infinite;
+  --animate-bounce-2: bounce 1s ease-in-out 0.166s infinite;
+  --animate-bounce-3: bounce 1s ease-in-out 0.33s infinite;
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-35%);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+}
+
+@layer base {
+  @variant dark {
+    --color-primary: oklch(70% 0.25 200); /* Bright Cyan */
+    --color-secondary: oklch(88% 0.2 100); /* Warm Yellow */
+    --color-surface: oklch(25% 0.01 270); /* Deep Gray Surface */
+    --color-border: oklch(35% 0 0); /* Dark Border */
+
+    --color-primary-text: oklch(95% 0 0); /* Light Gray */
+    --color-secondary-text: oklch(75% 0 0); /* Medium Gray */
+    --color-btn-primary-text: oklch(100% 0 0); /* White */
+    --color-btn-secondary-text: oklch(25% 0 0); /* Dark Surface */
+
+    --color-background: oklch(15% 0.01 270); /* Near Black */
+
+    --color-success: oklch(70% 0.27 160); /* Bright Green */
+    --color-warning: oklch(78% 0.22 80); /* Strong Amber */
+    --color-error: oklch(68% 0.26 25); /* Light Red */
+
+    --color-btn-disabled-bg: oklch(30% 0 0); /* Dark Gray */
+    --color-btn-disabled-text: oklch(50% 0 0); /* Soft Gray Text */
+
+    /* Dark Mode Shadows using oklch */
+    --shadow-xs: 0 1px 2px oklch(30% 0 0 / 0.03);
+    --shadow-sm: 0 1px 3px oklch(30% 0 0 / 0.05);
+    --shadow-md: 0 4px 6px oklch(30% 0 0 / 0.3), 0 2px 4px oklch(30% 0 0 / 0.2);
+    --shadow-lg: 0 10px 15px oklch(30% 0 0 / 0.4),
+      0 4px 6px oklch(30% 0 0 / 0.25);
+    --shadow-xl: 0 20px 25px oklch(30% 0 0 / 0.5),
+      0 10px 10px oklch(30% 0 0 / 0.3);
+    --shadow-2xl: 0 25px 50px oklch(30% 0 0 / 0.6);
+    --shadow-inner: inset 0 2px 4px oklch(90% 0 0 / 0.05);
+    --shadow-none: none;
+  }
+}
+
+body {
+  font-family: var(--font-inter);
+}
