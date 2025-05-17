@@ -1,10 +1,9 @@
 {
-  "name": "lean-blocks",
-  "private": true,
+  "name": "@siratul1204/lean-blocks",
   "version": "0.0.0",
   "type": "module",
   "style": "lib/styles/globals.css",
-  "main": "dist/main.js",
+  "main": "dist/lean-blocks.js",
   "types": "dist/main.d.ts",
   "files": [
     "dist"
@@ -16,7 +15,8 @@
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
