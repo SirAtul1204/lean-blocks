@@ -2,19 +2,14 @@
   "name": "@siratul1204/lean-blocks",
   "version": "0.0.3",
   "type": "module",
+  "main": "./dist/lean-blocks.js",
+  "types": "./dist/main.d.ts",
   "files": [
     "dist"
   ],
   "sideEffects": [
     "**/*.css"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/lean-block.js",
-      "types": "./dist/main.d.ts"
-    },
-    "./dist/main.css": "./dist/main.css"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b ./tsconfig.lib.json && vite build",
