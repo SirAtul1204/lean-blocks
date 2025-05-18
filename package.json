@@ -16,7 +16,6 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepublishOnly": "pnpm run build",
-    "publish": "pnpm run build && pnpm publish --access=public",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "serve-storybook": "serve storybook-static"
