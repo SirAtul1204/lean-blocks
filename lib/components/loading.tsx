@@ -5,7 +5,7 @@ interface LoadingProps {
   variant?: "primary" | "secondary";
 }
 
-export function Loading({ size = "sm", variant }: LoadingProps) {
+export function Loading({ size = "sm", variant = "primary" }: LoadingProps) {
   const sizeStyle = clsx(
     size === "xs" && "w-1 h-1",
     size === "sm" && "w-3 h-3"

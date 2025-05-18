@@ -3,16 +3,18 @@ import type { ButtonHTMLAttributes } from "react";
 import { Loading } from "./loading";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+  children: string;
   variant?: "primary" | "secondary";
   isLoading?: boolean;
+  disabled?: boolean;
 }
 
 export function Button({
   variant = "primary",
   children,
-  isLoading = true,
+  isLoading,
   disabled,
+  className,
   ...props
 }: ButtonProps) {
   const defaultStyles = "px-4 py-2 rounded flex items-center gap-2 ";
@@ -30,7 +32,8 @@ export function Button({
         variant === "primary" && !disabled && primaryStyles,
         variant === "secondary" && !disabled && secondaryStyles,
         !disabled && notDisabledStyles,
-        disabled && disabledStyles
+        disabled && disabledStyles,
+        className
       )}
       {...props}
     >

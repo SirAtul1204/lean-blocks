@@ -1,4 +1,4 @@
-import { Button, Loading } from ".";
+import { Button, Link, Loading } from ".";
 import "./App.css";
 
 function App() {
@@ -7,6 +7,8 @@ function App() {
       <Button>Hello world</Button>
 
       <Loading />
+
+      <Link href="/ppp">This is a link</Link>
     </div>
   );
 }
