@@ -1,54 +1,57 @@
-# React + TypeScript + Vite
+# Lean Blocks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, customizable React component library built with Tailwind CSS.
 
-Currently, two official plugins are available:
+## Storybook
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://lean-blocks.atul.website/
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Install the package and its peer dependencies:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+pnpm add @siratul1204/lean-blocks
+# or
+npm install @siratul1204/lean-blocks
+# or
+yarn add @siratul1204/lean-blocks
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Peer Dependencies
+
+This library requires the following peer dependencies in your project:
+
+- `react` ^19.1.0
+- `react-dom` ^19.1.0
+- `tailwindcss` ^4.1.7
+
+## Setup
+
+Add the following in your global/main CSS file -
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+
+@import "<path_to_node_modules>/node_modules/@siratul1204/lean-blocks/dist/theme.css";
+
+@source "<path_to_node_modules>/node_modules/@siratul1204/lean-blocks";
+```
+
+_Replace `<path_to_node_modules>` with relative path to node_modules_
+
+## Dark Mode
+
+This library supports dark mode using the `.dark` class.  
+To toggle dark mode, add or remove the `dark` class on your `<html>` or `<body>` element.
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+document.documentElement.classList.add("dark"); // Enable dark mode
+document.documentElement.classList.remove("dark"); // Disable dark mode
 ```
+
+## License
+
+MIT

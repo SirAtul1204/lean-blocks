@@ -6,6 +6,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { glob } from "glob";
 import { fileURLToPath } from "node:url";
+import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     libInjectCss(),
+    svgr(),
     dts({
       tsconfigPath: resolve(__dirname, "tsconfig.lib.json"),
     }),
