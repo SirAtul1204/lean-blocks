@@ -1,8 +1,15 @@
 import clsx from "clsx";
 import type { FC, ImgHTMLAttributes, SVGProps } from "react";
 import ChevronRight from "../svgs/chevron-right.svg?react";
+import ChevronLeft from "../svgs/chevron-left.svg?react";
+import ChevronUp from "../svgs/chevron-up.svg?react";
+import ChevronDown from "../svgs/chevron-down.svg?react";
 
-export type IconOptions = "chevron-right";
+export type IconOptions =
+  | "chevron-right"
+  | "chevron-up"
+  | "chevron-left"
+  | "chevron-down";
 
 interface IconProps extends ImgHTMLAttributes<SVGElement> {
   icon: IconOptions;
@@ -12,6 +19,9 @@ interface IconProps extends ImgHTMLAttributes<SVGElement> {
 
 const iconMap: Map<IconOptions, FC<SVGProps<SVGSVGElement>>> = new Map([
   ["chevron-right", ChevronRight],
+  ["chevron-left", ChevronLeft],
+  ["chevron-up", ChevronUp],
+  ["chevron-down", ChevronDown],
 ]);
 
 export function Icon({

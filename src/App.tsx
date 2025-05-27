@@ -13,15 +13,19 @@ function App() {
 
   return (
     <div className=" w-screen h-screen bg-background p-8">
-      <Button onClick={changeTheme}>Switch theme</Button>
+      <Button onClick={changeTheme} icon={"chevron-right"}>
+        Switch theme
+      </Button>
 
       <Loading />
 
-      <Link href="/ppp">This is a link</Link>
+      <Link href="/ppp" icon="chevron-up" variant="secondary">
+        This is a link
+      </Link>
 
       <Tab>Tab 1</Tab>
 
-      <Icon icon="chevron-right" />
+      <Icon icon="chevron-down" />
     </div>
   );
 }

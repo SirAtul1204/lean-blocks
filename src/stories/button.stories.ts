@@ -63,3 +63,10 @@ export const DisabledLoading: Story = {
     isLoading: true,
   },
 };
+
+export const ButtonWithIcon: Story = {
+  args: {
+    children: "Hello World",
+    icon: "chevron-right"
+  }
+};

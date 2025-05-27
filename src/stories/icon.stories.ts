@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Link } from "../../lib/main";
+import { Icon } from "../../lib/main";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
-  title: "Link",
-  component: Link,
+  title: "Icon",
+  component: Icon,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
     layout: "centered",
@@ -15,7 +15,7 @@ const meta = {
   argTypes: {
     children: { control: "text" },
   },
-} satisfies Meta<typeof Link>;
+} satisfies Meta<typeof Icon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -23,20 +23,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary: Story = {
   args: {
-    children: "Hello World",
+    icon: "chevron-up",
   },
-};
-
-export const Secondary: Story = {
-  args: {
-    children: "Hello World",
-    variant: "secondary",
-  },
-};
-
-export const LinkWithButton: Story = {
-  args: {
-    children: "Hello World",
-    icon: "chevron-right"
-  }
 };

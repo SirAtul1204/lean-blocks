@@ -1,13 +1,18 @@
 import clsx from "clsx";
 import type { ButtonHTMLAttributes } from "react";
 import { Loading } from "./loading";
+import { Icon, type IconOptions } from "./icon";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type BaseProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: string;
   variant?: "primary" | "secondary";
   isLoading?: boolean;
   disabled?: boolean;
-}
+  iconPosition?: "left" | "right";
+  icon?: IconOptions;
+};
+
+type ButtonProps = BaseProps;
 
 export function Button({
   variant = "primary",
@@ -15,6 +20,8 @@ export function Button({
   isLoading,
   disabled,
   className,
+  icon,
+  iconPosition = "right",
   ...props
 }: ButtonProps) {
   const defaultStyles = "px-4 py-2 rounded flex items-center gap-2 ";
@@ -37,7 +44,9 @@ export function Button({
       )}
       {...props}
     >
+      {iconPosition === "left" && icon && <Icon icon={icon} color="button" />}
       {children}
+      {iconPosition === "right" && icon && <Icon icon={icon} color="button" />}
       {isLoading && (
         <Loading
           size="xs"
